@@ -2,6 +2,7 @@
 package ar.com.eduducactionit.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +25,17 @@ public class OrdenServiceImpl implements OrdenService {
 	}
 
 	@Override
-	public Orden crear(Orden newOrden) {
+	public Orden create(Orden newOrden) {
 		return this.repository.save(newOrden);
 	}
 
+	@Override
+	public Optional<Orden> getById(Long id) {
+		return this.repository.findById(id);
+	}
+
+	@Override
+	public void update(Orden ordenFromDb) {
+		this.repository.save(ordenFromDb);
+	}
 }
