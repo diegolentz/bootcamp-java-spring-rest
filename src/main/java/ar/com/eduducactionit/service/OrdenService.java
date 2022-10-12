@@ -8,4 +8,6 @@ import ar.com.eduducactionit.entity.Orden;
 public interface OrdenService {
 
 	public List<Orden> findAll();
+
+	public Orden crear(Orden newOrden);
 }
